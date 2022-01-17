@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,13 +13,8 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 <link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
 <link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
 <style type="text/css">
-
-	/* 팝업 */
-	.popup_contents .box{text-align:center;width:900px;position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);}
-	.popup_contents .tableContainer{margin-top:20px;}
-	.popup_contents .conImg{height:385px;margin-top:20px;}
-	.popup_contents .contentsList{font-size:35px !important;}
-	.tableContainer table td, .tableContainer table th{font-size: 40px;}
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
 
 	/* row트리
 	* 동글블릿: .it-treeRow-tail
@@ -103,21 +97,6 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
 	.tableContainer.it-colorful .it-white{background:#fff;}
 
-	/* 임시 타이틀 */
-	.suhi h2 ins.special:before{content:"개념";}
-	.suhi h2 ins.special:after{content:"정리";}
-
-	/* 임시 쌍둥이문제 */
-	.characterBtn.it-green{width:auto; padding-right:52px; background:#93ce12; letter-spacing:-1px;}
-	.popup_pages>li.whole h2.it-twinsTitle{padding:0; background:none;}
-	.suhi .popup_pages h2.it-twinsTitle ins.special:before{content:"쌍둥이";}
-	.suhi .popup_pages h2.it-twinsTitle ins.special:after{content:" 문제";}
-	.popup_pages>li.whole h2.it-onemoreTitle{padding:0; background:none;}
-	.popup_pages>li.whole h2.it-onemoreTitle ins.special:before{content:"한 번"}
-	.popup_pages>li.whole h2.it-onemoreTitle ins.special:after{content:" 더"}
-
-	/* 임시 팝업내 답버튼 */
-	.popup_contents .buttonContainer{right:40px; bottom:20px;}
 
 	/* 개별 */
 	.page_0 .it-img{position:relative; width:780px; height:260px; margin:0 auto; background:url(./images/content-0.png) no-repeat -70px -240px / 1080px auto; clip-path: polygon(0 0,730px 0,810px 260px, 0 260px);}
@@ -685,33 +664,40 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 			</div>
 		</li>
 
-		<li class="whole pop_page_12" data-popup-page="12" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-twinsTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div>나타내는 수를 써 보세요.</div>
-				</div>
-				<div class="lineBox green textAlignC mt_40" style="width:600px; margin:0 auto;">
-					1000억을 10배 한 수
-				</div>
-				<div class="textAlignC mt_50">
-					<div class="toggle" data-toggle-obj="121">
-						<div class="answer" data-toggle-target="121">
-							1조
+		<li class="whole pop_page_12" data-popup-page="12">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">나타내는 수를 써 보세요.</p>
+							<!-- popup article -->
+							<div class="lineBox green textAlignC mt_40" style="width:600px; margin:0 auto;">
+								1000억을 10배 한 수
+							</div>
+							<div class="textAlignC mt_50">
+								<div class="toggle" data-toggle-obj="121">
+									<div class="answer" data-toggle-target="121">
+										1조
+									</div>
+								</div> 또는 <div class="toggle" data-toggle-obj="122">
+									<div class="answer" data-toggle-target="122">
+										1000000000000
+									</div>
+								</div>
+							</div>
+							<!-- //popup article -->
 						</div>
-					</div> 또는 <div class="toggle" data-toggle-obj="122">
-						<div class="answer" data-toggle-target="122">
-							1000000000000
-						</div>
-					</div>
-				</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
 
@@ -738,44 +724,50 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</div>
 			</div>
 		</li>
-		<li class="whole pop_page_22" data-popup-page="22" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-twinsTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</div>
-				</div>
-				<div class="flexListContainer center jcenter mt_20">
-					<div>
-						<div class="colorBox orange check mr_20">
-							1조
-						</div>
-					</div>
-					<div class="icon_arrow mr_20"></div>
-					<div class="it-treeRow it-treeRow-tail brown">
-						<div class="it-treeRow-list">
-							9900억보다 <div class="toggle" data-toggle-obj="221">
-								<div class="answer" data-toggle-target="221">
-									100억
+		<li class="whole pop_page_22" data-popup-page="22">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10"><span class="blankBox w50"></span> 안에 알맞은 수를 써넣으세요.</p>
+							<!-- popup article -->
+							<div class="flexListContainer center jcenter mt_20">
+								<div>
+									<div class="colorBox orange check mr_20">
+										1조
+									</div>
 								</div>
-							</div>만큼 더 큰 수입니다.
-						</div>
-						<div class="it-treeRow-list">
-							9990억보다 <div class="toggle" data-toggle-obj="222">
-								<div class="answer" data-toggle-target="222">
-									10억
+								<div class="icon_arrow mr_20"></div>
+								<div class="it-treeRow it-treeRow-tail brown">
+									<div class="it-treeRow-list">
+										9900억보다 <div class="toggle" data-toggle-obj="221">
+											<div class="answer" data-toggle-target="221">
+												100억
+											</div>
+										</div>만큼 더 큰 수입니다.
+									</div>
+									<div class="it-treeRow-list">
+										9990억보다 <div class="toggle" data-toggle-obj="222">
+											<div class="answer" data-toggle-target="222">
+												10억
+											</div>
+										</div>만큼 더 큰 수입니다.
+									</div>
 								</div>
-							</div>만큼 더 큰 수입니다.
+							</div>
+							<!-- //popup article -->
 						</div>
-					</div>
-
-				</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
 
@@ -791,106 +783,113 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				5는 <strong>조</strong>의 자리이므로 5000000000000를 나타냅니다.
 			</div>
 		</li>
-		<li class="whole pop_page_33" data-popup-page="33" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-twinsTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div><span class="blankBox w50"></span> 안에 알맞은 수를 써넣고 물음에 답하세요.</div>
-				</div>
-				<div class="tableContainer brown it-colorful">
-					<table><tbody>
-					<tr>
-						<td class="it-white" colspan="16">5164000000000000</td>
-					</tr>
-					<tr>
-						<td class="it-purple">
-							<div class="toggle noBg" data-toggle-obj="331">
-								<div class="answer" data-toggle-target="331">5</div>
-							</div>
-						</td>
-						<td class="it-purple">
-							<div class="toggle noBg" data-toggle-obj="332">
-								<div class="answer" data-toggle-target="332">1</div>
-							</div>
-						</td>
-						<td class="it-purple">
-							<div class="toggle noBg" data-toggle-obj="333">
-								<div class="answer" data-toggle-target="333">6</div>
-							</div>
-						</td>
-						<td class="it-purple">
-							<div class="toggle noBg" data-toggle-obj="334">
-								<div class="answer" data-toggle-target="334">4</div>
-							</div>
-						</td>
-						<td class="it-skyBlue">0</td>
-						<td class="it-skyBlue">0</td>
-						<td class="it-skyBlue">0</td>
-						<td class="it-skyBlue">0</td>
-						<td class="it-green">0</td>
-						<td class="it-green">0</td>
-						<td class="it-green">0</td>
-						<td class="it-green">0</td>
-						<td class="it-orange">0</td>
-						<td class="it-orange">0</td>
-						<td class="it-orange">0</td>
-						<td class="it-orange">0</td>
-					</tr>
-					<tr>
-						<td class="it-lightpurple">천</td>
-						<td class="it-lightpurple">백</td>
-						<td class="it-lightpurple">십</td>
-						<td class="it-lightpurple">일</td>
-						<td class="it-sky">천</td>
-						<td class="it-sky">백</td>
-						<td class="it-sky">십</td>
-						<td class="it-sky">일</td>
-						<td class="it-lightgreen">천</td>
-						<td class="it-lightgreen">백</td>
-						<td class="it-lightgreen">십</td>
-						<td class="it-lightgreen">일</td>
-						<td class="it-lightorange">천</td>
-						<td class="it-lightorange">백</td>
-						<td class="it-lightorange">십</td>
-						<td class="it-lightorange">일</td>
-					</tr>
-					<tr>
-						<td class="it-white redT textAlignR" colspan="4">조</td>
-						<td class="it-white redT textAlignR" colspan="4">억</td>
-						<td class="it-white redT textAlignR" colspan="4">만</td>
-						<td class="it-white redT textAlignR" colspan="4">일</td>
-					</tr>
-					</tbody></table>
-				</div>
-				<ul class="contentsList mt_20">
+		<li class="whole pop_page_33" data-popup-page="33">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
 					<li>
-						<ins class="dot deepGreen"></ins>
-						<div>숫자 5가 나타내는 값은 얼마인가요?</div>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10"><span class="blankBox w50"></span> 안에 알맞은 수를 써넣고 물음에 답하세요.</p>
+							<!-- popup article -->
+							<div class="tableContainer brown it-colorful">
+								<table><tbody>
+								<tr>
+									<td class="it-white" colspan="16">5164000000000000</td>
+								</tr>
+								<tr>
+									<td class="it-purple">
+										<div class="toggle noBg" data-toggle-obj="331">
+											<div class="answer" data-toggle-target="331">5</div>
+										</div>
+									</td>
+									<td class="it-purple">
+										<div class="toggle noBg" data-toggle-obj="332">
+											<div class="answer" data-toggle-target="332">1</div>
+										</div>
+									</td>
+									<td class="it-purple">
+										<div class="toggle noBg" data-toggle-obj="333">
+											<div class="answer" data-toggle-target="333">6</div>
+										</div>
+									</td>
+									<td class="it-purple">
+										<div class="toggle noBg" data-toggle-obj="334">
+											<div class="answer" data-toggle-target="334">4</div>
+										</div>
+									</td>
+									<td class="it-skyBlue">0</td>
+									<td class="it-skyBlue">0</td>
+									<td class="it-skyBlue">0</td>
+									<td class="it-skyBlue">0</td>
+									<td class="it-green">0</td>
+									<td class="it-green">0</td>
+									<td class="it-green">0</td>
+									<td class="it-green">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+									<td class="it-orange">0</td>
+								</tr>
+								<tr>
+									<td class="it-lightpurple">천</td>
+									<td class="it-lightpurple">백</td>
+									<td class="it-lightpurple">십</td>
+									<td class="it-lightpurple">일</td>
+									<td class="it-sky">천</td>
+									<td class="it-sky">백</td>
+									<td class="it-sky">십</td>
+									<td class="it-sky">일</td>
+									<td class="it-lightgreen">천</td>
+									<td class="it-lightgreen">백</td>
+									<td class="it-lightgreen">십</td>
+									<td class="it-lightgreen">일</td>
+									<td class="it-lightorange">천</td>
+									<td class="it-lightorange">백</td>
+									<td class="it-lightorange">십</td>
+									<td class="it-lightorange">일</td>
+								</tr>
+								<tr>
+									<td class="it-white redT textAlignR" colspan="4">조</td>
+									<td class="it-white redT textAlignR" colspan="4">억</td>
+									<td class="it-white redT textAlignR" colspan="4">만</td>
+									<td class="it-white redT textAlignR" colspan="4">일</td>
+								</tr>
+								</tbody></table>
+							</div>
+							<ul class="contentsList mt_20">
+								<li>
+									<ins class="dot deepGreen"></ins>
+									<div>숫자 5가 나타내는 값은 얼마인가요?</div>
+								</li>
+							</ul>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="335">
+									<div class="answer" data-toggle-target="335">5000000000000000</div>
+								</div>
+							</div>
+							<ul class="contentsList mt_20">
+								<li>
+									<ins class="dot deepGreen"></ins>
+									<div>숫자 6이 나타내는 값은 얼마인가요?</div>
+								</li>
+							</ul>
+							<div class="textAlignC mt_20">
+								<div class="toggle" data-toggle-obj="336">
+									<div class="answer" data-toggle-target="336">60000000000000</div>
+								</div>
+							</div>
+							<!-- //popup article -->
+						</div>
 					</li>
 				</ul>
-				<div class="textAlignC mt_20">
-					<div class="toggle" data-toggle-obj="335">
-						<div class="answer" data-toggle-target="335">5000000000000000</div>
-					</div>
-				</div>
-				<ul class="contentsList mt_20">
-					<li>
-						<ins class="dot deepGreen"></ins>
-						<div>숫자 6이 나타내는 값은 얼마인가요?</div>
-					</li>
-				</ul>
-				<div class="textAlignC mt_20">
-					<div class="toggle" data-toggle-obj="336">
-						<div class="answer" data-toggle-target="336">60000000000000</div>
-					</div>
-				</div>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
 
@@ -917,83 +916,96 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</ul>
 			</div>
 		</li>
-		<li class="whole pop_page_42" data-popup-page="42" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-twinsTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div><ins class="icon_bogi it-title"></ins>와 같이 나타내 보세요.</div>
-				</div>
-				<div class="bogiContainer mt_20">
-					<div class="icon_bogi"></div>
-					<div class="inner">
-						<div class="flexListContainer center jcenter mt_20">
-							<div class="mr_20">
-								827508421054114
+		<li class="whole pop_page_42" data-popup-page="42">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10"><ins class="icon_bogi it-title"></ins>와 같이 나타내 보세요.</p>
+							<!-- popup article -->
+							<div class="bogiContainer mt_20">
+								<div class="icon_bogi"></div>
+								<div class="inner">
+									<div class="flexListContainer center jcenter mt_20">
+										<div class="mr_20">
+											827508421054114
+										</div>
+										<div class="icon_arrow mr_20"></div>
+										<div>
+											827조 5084억 2105만 4114
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="icon_arrow mr_20"></div>
-							<div>
-								827조 5084억 2105만 4114
+							<div class="textAlignC">
+								<ul class="dotList deepGreen it-list mt_40" style="display:inline-block;">
+									<li>
+										<div class="flexListContainer center">
+											<div class="mr_20">921040751423348</div>
+											<div class="icon_arrow mr_20"></div>
+											<div class="toggle" data-toggle-obj="421">
+												<div class="answer" data-toggle-target="421">
+													921조 407억 5142만 3348
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="flexListContainer center">
+											<div class="mr_20">725619747581081</div>
+											<div class="icon_arrow mr_20"></div>
+											<div class="toggle" data-toggle-obj="422">
+												<div class="answer" data-toggle-target="422">
+													725조 6197억 4758만 1081
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
+							<!-- //popup article -->
 						</div>
-					</div>
-				</div>
-				<div class="textAlignC">
-					<ul class="dotList deepGreen it-list mt_40" style="display:inline-block;">
-						<li>
-							<div class="flexListContainer center">
-								<div class="mr_20">921040751423348</div>
-								<div class="icon_arrow mr_20"></div>
-								<div class="toggle" data-toggle-obj="421">
-									<div class="answer" data-toggle-target="421">
-										921조 407억 5142만 3348
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="flexListContainer center">
-								<div class="mr_20">725619747581081</div>
-								<div class="icon_arrow mr_20"></div>
-								<div class="toggle" data-toggle-obj="422">
-									<div class="answer" data-toggle-target="422">
-										725조 6197억 4758만 1081
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
 
-		<li class="whole pop_page_43" data-popup-page="43" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-onemoreTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div>693조 720억을 수로 나타내 보세요.</div>
-				</div>
-				<div class="textAlignC mt_40">
-					<div class="toggle" data-toggle-obj="431">
-						<div class="answer" data-toggle-target="431">
-							693072000000000
+		<li class="whole pop_page_43" data-popup-page="43">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins><!-- 한번더 -->
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">693조 720억을 수로 나타내 보세요.</p>
+							<!-- popup article -->
+							<div class="textAlignC mt_40">
+								<div class="toggle" data-toggle-obj="431">
+									<div class="answer" data-toggle-target="431">
+										693072000000000
+									</div>
+								</div>
+							</div>
+							<!-- //popup article -->
 						</div>
-					</div>
-				</div>
-
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
 
@@ -1012,42 +1024,49 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</ul>
 			</div>
 		</li>
-		<li class="whole pop_page_52 page_5_comm" data-popup-page="52" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-twinsTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div>설명하는 수를 쓰고, 읽어 보세요.</div>
-				</div>
-				<div class="lineBox green textAlignC it-box mt_20">
-					조가 45개, 억이 17409개인 수
-				</div>
-				<div class="textAlignC mt_40">
-					<ul style="display:inline-block;">
-						<li class="flexListContainer start center">
-							<div class="colorBox check deepOrange">쓰기</div>
-							<div>
-								<div class="toggle" data-toggle-obj="521">
-									<div class="answer" data-toggle-target="521">46740900000000</div>
-								</div>
+		<li class="whole pop_page_52 page_5_comm" data-popup-page="52">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">설명하는 수를 쓰고, 읽어 보세요.</p>
+							<!-- popup article -->
+							<div class="lineBox green textAlignC it-box mt_20">
+								조가 45개, 억이 17409개인 수
 							</div>
-						</li>
-						<li class="flexListContainer start center mt_20">
-							<div class="colorBox check brown">읽기</div>
-							<div>
-								<div class="toggle" data-toggle-obj="522">
-									<div class="answer" data-toggle-target="522">사십육조 칠천사백구억</div>
-								</div>
+							<div class="textAlignC mt_40">
+								<ul style="display:inline-block;">
+									<li class="flexListContainer start center">
+										<div class="colorBox check deepOrange">쓰기</div>
+										<div>
+											<div class="toggle" data-toggle-obj="521">
+												<div class="answer" data-toggle-target="521">46740900000000</div>
+											</div>
+										</div>
+									</li>
+									<li class="flexListContainer start center mt_20">
+										<div class="colorBox check brown">읽기</div>
+										<div>
+											<div class="toggle" data-toggle-obj="522">
+												<div class="answer" data-toggle-target="522">사십육조 칠천사백구억</div>
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
-						</li>
-					</ul>
-				</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
 
@@ -1073,66 +1092,70 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale
 				</ul>
 			</div>
 		</li>
-		<li class="whole pop_page_62" data-popup-page="62" data-quiz="toggle">
-			<div class="popup_contents">
-				<h2 class="it-twinsTitle"><ins class="special"></ins><span>
-					<!-- 쌍둥이 문제 -->
-				</span></h2>
-				<div class="flexListContainer start">
-					<ins class="bullet circleDot"></ins>
-					<div>어느 나라에서 한 해 동안 어린이를 위해 지원한 금액을 나타낸 표입니다. 빈칸에 알맞은 금액을 써넣으세요.
-					</div>
-				</div>
-				<div class="tableContainer green">
-					<table><tbody>
-						<tr>
-							<th>구분</th>
-							<th colspan="3">금액(원)</th>
-						</tr>
-						<tr>
-							<th>생활 지원</th>
-							<td>2306500000000</td>
-							<td>2조 3065억</td>
-							<td>이조 삼천육십오억</td>
-						</tr>
-						<tr>
-							<th>교육 지원</th>
-							<td>
-								<div class="toggle noBg" data-toggle-obj="621">
-									<div class="answer" data-toggle-target="621">3025000000000</div>
-								</div>
-							</td>
-							<td>
-								<div class="toggle noBg" data-toggle-obj="622">
-									<div class="answer" data-toggle-target="622">3조 250억</div>
-								</div>
-							</td>
-							<td>삼조 이백오십억</td>
-						</tr>
-						<tr>
-							<th>환경 지원</th>
-							<td>21002500000000</td>
-							<td>
-								<div class="toggle noBg" data-toggle-obj="623">
-									<div class="answer" data-toggle-target="623">21조 25억</div>
-								</div>
-							</td>
-							<td>
-								<div class="toggle noBg" data-toggle-obj="624">
-									<div class="answer" data-toggle-target="624">이십일조 이십오억</div>
-								</div>
-							</td>
-						</tr>
-					</tbody></table>
-				</div>
-
+		<li class="whole pop_page_62" data-popup-page="62">
+			<h2 class="pop-tit">
+				<ins class="special type3"></ins>
+				<span></span>
+			</h2>
+			<div class="popup_contents" data-quiz="toggle">
+				<ul class="contentsList">
+					<li>
+						<ins class="bullet circleDot"></ins>
+						<div>
+							<p class="mb_10">어느 나라에서 한 해 동안 어린이를 위해 지원한 금액을 나타낸 표입니다. 빈칸에 알맞은 금액을 써넣으세요.</p>
+							<!-- popup article -->
+							<div class="tableContainer green">
+								<table><tbody>
+									<tr>
+										<th>구분</th>
+										<th colspan="3">금액(원)</th>
+									</tr>
+									<tr>
+										<th>생활 지원</th>
+										<td>2306500000000</td>
+										<td>2조 3065억</td>
+										<td>이조 삼천육십오억</td>
+									</tr>
+									<tr>
+										<th>교육 지원</th>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="621">
+												<div class="answer" data-toggle-target="621">3025000000000</div>
+											</div>
+										</td>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="622">
+												<div class="answer" data-toggle-target="622">3조 250억</div>
+											</div>
+										</td>
+										<td>삼조 이백오십억</td>
+									</tr>
+									<tr>
+										<th>환경 지원</th>
+										<td>21002500000000</td>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="623">
+												<div class="answer" data-toggle-target="623">21조 25억</div>
+											</div>
+										</td>
+										<td>
+											<div class="toggle noBg" data-toggle-obj="624">
+												<div class="answer" data-toggle-target="624">이십일조 이십오억</div>
+											</div>
+										</td>
+									</tr>
+								</tbody></table>
+							</div>
+							<!-- //popup article -->
+						</div>
+					</li>
+				</ul>
+				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 				<div class="buttonContainer">
 					<button class="dapCheckBtn" data-answer-btn=""></button>
 				</div>
-				<a href="./data/(4-1-1)수학익힘쌍둥이_06차시.hwp" target="_blank" class="downloadBtn" data-name="활동지 다운로드"></a>
 			</div>
 		</li>
-
 	</ul>
 </section>
 
