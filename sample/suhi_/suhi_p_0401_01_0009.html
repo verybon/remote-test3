@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 user-scalable=0">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../common/libs/css/master.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math.css">
+<link rel="stylesheet" type="text/css" href="../common/contents/css/math_suhi.css">
+<link rel="stylesheet" type="text/css" href="../../../__common__/css/custom.css">
+<style type="text/css">
+	.popup_pages>li.whole h2.pop-tit{background-color:transparent !important; align-self:flex-start; padding:20px; }
+	.popup_pages .buttonContainer{right:40px; bottom:20px;}
+
+	/* row트리
+	* 동글블릿: .it-treeRow-tail
+	* 뒤집기: .it-treeRow-reverse
+	* 텍스트: .it-treeRow-textOnly
+	*/
+	.it-treeRow > .it-treeRow-list{position:relative; min-height:60px; padding:5px 0 5px 50px;}
+	.it-treeRow.it-treeRow-textOnly > .it-treeRow-list{min-height:inherit;}
+	.it-treeRow > .it-treeRow-list:before{content:""; display:block; position:absolute; top:50%; left:0; overflow:hidden; width:30px; height:100%; margin-top:-2px; box-shadow:3px 3px 0 #000 inset; transform:scale(1.01);}
+	.it-treeRow > .it-treeRow-list:after{content:""; display:block;  position:absolute; top:50%; left:24px; overflow:hidden; width:12px; height:12px; margin-top:-6px; border-radius:50%; transform:scale(1.01);}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list:after{left:auto; right:24px;}
+	.it-treeRow > .it-treeRow-list:last-child:before{height:4px; box-shadow:0 4px 0 #000 inset;}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list{padding:5px 50px 5px 0; text-align:right;}
+	.it-treeRow.it-treeRow-reverse > .it-treeRow-list:before{left:auto; right:0; box-shadow:-4px 4px 0 #000 inset;}
+	.it-treeRow.pink > .it-treeRow-list:before{box-shadow:4px 4px 0 #ffece2 inset;}
+	.it-treeRow.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+	.it-treeRow.deeppink > .it-treeRow-list:before{box-shadow:4px 4px 0 #f7c1c9 inset;}
+	.it-treeRow.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+	.it-treeRow.yellow > .it-treeRow-list:before{box-shadow:4px 4px 0 #f4e8bd inset;}
+	.it-treeRow.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+	.it-treeRow.sky > .it-treeRow-list:before{box-shadow:4px 4px 0 #c1e8ec inset;}
+	.it-treeRow.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+	.it-treeRow.orange > .it-treeRow-list:before{box-shadow:4px 4px 0 #fccd89 inset;}
+	.it-treeRow.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+	.it-treeRow.beige > .it-treeRow-list:before{box-shadow:4px 4px 0 #efcfa6 inset;}
+	.it-treeRow.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+	.it-treeRow.purple > .it-treeRow-list:before{box-shadow:4px 4px 0 #cabfe0 inset;}
+	.it-treeRow.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+	.it-treeRow.brown > .it-treeRow-list:before{box-shadow:4px 4px 0 #ae7c65 inset;}
+	.it-treeRow.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+	.it-treeRow.green > .it-treeRow-list:before{box-shadow:4px 4px 0 #cee492 inset;}
+	.it-treeRow.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ffece2 inset;}
+	.it-treeRow.it-treeRow-reverse.pink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ffece2 inset;}
+	.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f7c1c9 inset;}
+	.it-treeRow.it-treeRow-reverse.deeppink > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f7c1c9 inset;}
+	.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:before{box-shadow:-4px 4px 0 #f4e8bd inset;}
+	.it-treeRow.it-treeRow-reverse.yellow > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #f4e8bd inset;}
+	.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:before{box-shadow:-4px 4px 0 #c1e8ec inset;}
+	.it-treeRow.it-treeRow-reverse.sky > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #c1e8ec inset;}
+	.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:before{box-shadow:-4px 4px 0 #fccd89 inset;}
+	.it-treeRow.it-treeRow-reverse.orange > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #fccd89 inset;}
+	.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:before{box-shadow:-4px 4px 0 #efcfa6 inset;}
+	.it-treeRow.it-treeRow-reverse.beige > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #efcfa6 inset;}
+	.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cabfe0 inset;}
+	.it-treeRow.it-treeRow-reverse.purple > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cabfe0 inset;}
+	.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:before{box-shadow:-4px 4px 0 #ae7c65 inset;}
+	.it-treeRow.it-treeRow-reverse.brown > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #ae7c65 inset;}
+	.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:before{box-shadow:-4px 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-reverse.green > .it-treeRow-list:last-child:before{box-shadow:0 4px 0 #cee492 inset;}
+	.it-treeRow.it-treeRow-tail.pink > .it-treeRow-list:after{background:#ffece2;}
+	.it-treeRow.it-treeRow-tail.deeppink > .it-treeRow-list:after{background:#f7c1c9;}
+	.it-treeRow.it-treeRow-tail.yellow > .it-treeRow-list:after{background:#f4e8bd;}
+	.it-treeRow.it-treeRow-tail.sky > .it-treeRow-list:after{background:#c1e8ec;}
+	.it-treeRow.it-treeRow-tail.orange > .it-treeRow-list:after{background:#fccd89;}
+	.it-treeRow.it-treeRow-tail.beige > .it-treeRow-list:after{background:#efcfa6;}
+	.it-treeRow.it-treeRow-tail.purple > .it-treeRow-list:after{background:#cabfe0;}
+	.it-treeRow.it-treeRow-tail.brown > .it-treeRow-list:after{background:#ae7c65;}
+	.it-treeRow.it-treeRow-tail.green > .it-treeRow-list:after{background:#cee492;}
+
+	/* 숫자자리 table */
+	.tableContainer.it-colorful:not(.brown) table tr:first-of-type td{border-top:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr:not(:last-of-type) th{border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td:first-child{border-left:2px solid #fff;}
+	.tableContainer.it-colorful:not(.brown) table tr td{border-right:2px solid #fff; border-bottom:2px solid #fff;}
+	.tableContainer.it-colorful .it-pink{background:#ffece2;}
+	.tableContainer.it-colorful .it-deeppink{background:#f7c1c9;}
+	.tableContainer.it-colorful .it-beige{background:#f6e7d4;}
+	.tableContainer.it-colorful .it-yellow{background:#f6f1d4;}
+	.tableContainer.it-colorful .it-green{background:#cee492;}
+	.tableContainer.it-colorful .it-lightgreen{background:#f3fcd0;}
+	.tableContainer.it-colorful .it-sky{background:#d4f3f6;}
+	.tableContainer.it-colorful .it-orange{background:#fccd89;}
+	.tableContainer.it-colorful .it-lightorange{background:#fff2d1;}
+	.tableContainer.it-colorful .it-purple{background:#cabfe0;}
+	.tableContainer.it-colorful .it-lightpurple{background:#ece5ff;}
+	.tableContainer.it-colorful .it-deepPurple{background:#b099df;}
+	.tableContainer.it-colorful .it-brown{background:#ae7c65;}
+	.tableContainer.it-colorful .it-deepOrange{background:#ff924f;}
+	.tableContainer.it-colorful .it-skyBlue{background:#5ca2e7;}
+	.tableContainer.it-colorful .it-white{background:#fff;}
+
+
+	/* 개별 */
+	.page_0 .it-img{position:relative; width:980px; height:320px; margin:0 auto; background:url(./images/content-0.png) no-repeat 50% -180px / 1200px auto;}
+	.page_0 .it-txt-1{position:absolute; top:160px; left:40px; transform:skew(0, -20deg);}
+	.page_0 .it-txt-2{position:absolute; top:160px; left:250px; transform:skew(0, -20deg);}
+	.page_0 .it-txt-3{position:absolute; top:160px; left:450px; transform:skew(0, -20deg);}
+	.page_0 .it-txt-4{position:absolute; top:160px; left:650px; transform:skew(0, -20deg);}
+	.page_0 .it-txt-5{position:absolute; top:160px; left:850px; transform:skew(0, -20deg);}
+
+	/* 기존 줄줄이네모박스 수정 */
+	.nemoBoxJool{position:relative; text-align:center; width:100%; margin:0 auto;}
+	.nemoBoxJool ul{display:flex; align-items:center; justify-content:space-between; position:relative; width:100%;}
+	.nemoBoxJool ul + ul{margin-top:20px;}
+	.nemoBoxJool ul + ul:before{right:0; width:calc(100% + 30px);}
+	.nemoBoxJool ul li{display:inline-block; position:relative;}
+	.nemoBoxJool li:before{content:""; display:block; position:absolute; top:50%; width:60px; margin-top:-2px; border-top:5px solid #fff;}
+	.nemoBoxJool li + li:before,
+	.nemoBoxJool ul + ul li:before{right:100%; margin-right:-5px;}
+	.nemoBoxJool ul li > div{display:block; position:relative; min-width:175px; height:70px; padding:0 5px; line-height:70px; background-color:#fff; border:5px solid #c1e8ec; border-radius:10px; z-index:1;}
+	.nemoBoxJool.it-pink li > div,
+	.nemoBoxJool.it-pink li:before{border-color:#ffece2;}
+	.nemoBoxJool.it-deeppink li > div,
+	.nemoBoxJool.it-deeppink li:before{border-color:#f7c1c9;}
+	.nemoBoxJool.it-beige li > div,
+	.nemoBoxJool.it-beige li:before{border-color:#efcfa6;}
+	.nemoBoxJool.it-yellow li > div,
+	.nemoBoxJool.it-yellow li:before{border-color:#f4e8bd;}
+	.nemoBoxJool.it-sky li > div,
+	.nemoBoxJool.it-sky li:before{border-color:#c1e8ec;}
+	.nemoBoxJool.it-orange li > div,
+	.nemoBoxJool.it-orange li:before{border-color:#fccd89;}
+	.nemoBoxJool.it-purple li > div,
+	.nemoBoxJool.it-purple li:before{border-color:#cabfe0;}
+	.nemoBoxJool.it-brown li > div,
+	.nemoBoxJool.it-brown li:before{border-color:#ae7c65;}
+	.nemoBoxJool.it-green li > div,
+	.nemoBoxJool.it-green li:before{border-color:#cee492;}
+	.nemoBoxJool.it-multi ul{justify-content:center;}
+	.nemoBoxJool.it-multi li{margin:0 15px;}
+	.nemoBoxJool.it-multi li > div{padding:0 20px;}
+
+	/* 개별 */
+	.page_1 .it-img{position:relative; width:100%; height:800px;}
+	.page_1 .colorBox{position:absolute;}
+</style>
+</head>
+
+<body>
+<div id="wrap" class="math suhi">
+<div id="bgContainer"></div>
+
+<header>
+	<h1><ins class="suhi_title"></ins>
+	<span class="subInfo">
+		<span class="sub-text">정리해 보아요</span>
+		<span class="sub-page">22쪽</span>
+	</span>
+	</h1>
+</header>
+<main>
+	<div class="basicSlider contentsBox" data-slide-container="main">
+		<ul class="basicSlider_tabs" data-tabs="">
+			<li data-hover="">정리 하기</li>
+			<li data-hover="">수학 일기</li>
+		</ul>
+		<ul class="basicSlider_slides" data-slides="">
+			<li class="page_1" data-slide-container="">
+				<h2><ins class="bullet dot white"></ins><span>
+					알맞은 것을 찾아 길을 따라가며 배운 내용을 정리해 봅시다.
+				</span></h2>
+				<ul class="basicSlider_slides" data-slides="">
+					<li class="page_1" data-slide-container="">
+
+						<ul class="basicSlider_slides" data-slides="">
+							<li class="innerTab_1">
+								<div class="scroll_container vertical" data-scroll-container="vertical" data-scroll-reset="true" style="height:400px;">
+									<div class="scroll_inner" data-scroll-inner="">
+										<div class="scroll_content" data-scroll-content="touch">
+											<div class="it-img">
+												<div class="colorBox white n1">1000이 10개인 수</div>
+												<div class="colorBox deeppink n1 clickObj blinkOn blinkOpacity">10000</div>
+												<div class="colorBox skyBlue n1 clickWrong blinkOn blinkOpacity">100000</div>
+
+												<div class="colorBox white n2">만이 1570인 수</div>
+												<div class="colorBox deeppink n2">15700000</div>
+												<div class="colorBox skyBlue n2">157000</div>
+
+												<div class="colorBox white n3">숫자 8이 800000을 나타내는 수</div>
+												<div class="colorBox deeppink n3">289021</div>
+												<div class="colorBox skyBlue n3">2890210</div>
+
+												<div class="colorBox white n4">705만에서 10만씩 3번 뛰어 센 수</div>
+												<div class="colorBox deeppink n4">735만</div>
+												<div class="colorBox skyBlue n4">745만</div>
+
+												<div class="colorBox white n5">두 수 중에서 더 큰 수</div>
+												<div class="colorBox deeppink n5">386500000</div>
+												<div class="colorBox skyBlue n5">3866억</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_2">
+								<div class="scroll_container vertical" data-scroll-container="vertical" data-scroll-reset="true" style="height:400px;">
+									<div class="scroll_inner" data-scroll-inner="">
+										<div class="scroll_content" data-scroll-content="touch">
+											<div class="it-img">
+												<div class="colorBox white n1">1000이 10개인 수</div>
+												<div class="colorBox deeppink n1">10000</div>
+												<div class="colorBox skyBlue n1">100000</div>
+
+												<div class="colorBox white n2">만이 1570인 수</div>
+												<div class="colorBox deeppink n2 blinkOn blinkOpacity clickObj">15700000</div>
+												<div class="colorBox skyBlue n2 blinkOn blinkOpacity clickWrong">157000</div>
+
+												<div class="colorBox white n3">숫자 8이 800000을 나타내는 수</div>
+												<div class="colorBox deeppink n3">289021</div>
+												<div class="colorBox skyBlue n3">2890210</div>
+
+												<div class="colorBox white n4">705만에서 10만씩 3번 뛰어 센 수</div>
+												<div class="colorBox deeppink n4">735만</div>
+												<div class="colorBox skyBlue n4">745만</div>
+
+												<div class="colorBox white n5">두 수 중에서 더 큰 수</div>
+												<div class="colorBox deeppink n5">386500000</div>
+												<div class="colorBox skyBlue n5">3866억</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_3">
+								<div class="scroll_container vertical" data-scroll-container="vertical" data-scroll-reset="true" style="height:400px;">
+									<div class="scroll_inner" data-scroll-inner="">
+										<div class="scroll_content" data-scroll-content="touch">
+											<div class="it-img">
+												<div class="colorBox white n1">1000이 10개인 수</div>
+												<div class="colorBox deeppink n1">10000</div>
+												<div class="colorBox skyBlue n1">100000</div>
+
+												<div class="colorBox white n2">만이 1570인 수</div>
+												<div class="colorBox deeppink n2">15700000</div>
+												<div class="colorBox skyBlue n2">157000</div>
+
+												<div class="colorBox white n3">숫자 8이 800000을 나타내는 수</div>
+												<div class="colorBox deeppink n3 blinkOn blinkOpacity clickWrong">289021</div>
+												<div class="colorBox skyBlue n3 blinkOn blinkOpacity clickObj">2890210</div>
+
+												<div class="colorBox white n4">705만에서 10만씩 3번 뛰어 센 수</div>
+												<div class="colorBox deeppink n4">735만</div>
+												<div class="colorBox skyBlue n4">745만</div>
+
+												<div class="colorBox white n5">두 수 중에서 더 큰 수</div>
+												<div class="colorBox deeppink n5">386500000</div>
+												<div class="colorBox skyBlue n5">3866억</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_4">
+								<div class="scroll_container vertical" data-scroll-container="vertical" data-scroll-reset="true" style="height:400px;">
+									<div class="scroll_inner" data-scroll-inner="">
+										<div class="scroll_content" data-scroll-content="touch">
+											<div class="it-img">
+												<div class="colorBox white n1">1000이 10개인 수</div>
+												<div class="colorBox deeppink n1">10000</div>
+												<div class="colorBox skyBlue n1">100000</div>
+
+												<div class="colorBox white n2">만이 1570인 수</div>
+												<div class="colorBox deeppink n2">15700000</div>
+												<div class="colorBox skyBlue n2">157000</div>
+
+												<div class="colorBox white n3">숫자 8이 800000을 나타내는 수</div>
+												<div class="colorBox deeppink n3">289021</div>
+												<div class="colorBox skyBlue n3">2890210</div>
+
+												<div class="colorBox white n4">705만에서 10만씩 3번 뛰어 센 수</div>
+												<div class="colorBox deeppink n4 blinkOn blinkOpacity clickObj">735만</div>
+												<div class="colorBox skyBlue n4 blinkOn blinkOpacity clickWrong">745만</div>
+
+												<div class="colorBox white n5">두 수 중에서 더 큰 수</div>
+												<div class="colorBox deeppink n5">386500000</div>
+												<div class="colorBox skyBlue n5">3866억</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="innerTab_5">
+								<div class="scroll_container vertical" data-scroll-container="vertical" data-scroll-reset="true" style="height:400px;">
+									<div class="scroll_inner" data-scroll-inner="">
+										<div class="scroll_content" data-scroll-content="touch">
+											<div class="it-img">
+												<div class="colorBox white n1">1000이 10개인 수</div>
+												<div class="colorBox deeppink n1">10000</div>
+												<div class="colorBox skyBlue n1">100000</div>
+
+												<div class="colorBox white n2">만이 1570인 수</div>
+												<div class="colorBox deeppink n2">15700000</div>
+												<div class="colorBox skyBlue n2">157000</div>
+
+												<div class="colorBox white n3">숫자 8이 800000을 나타내는 수</div>
+												<div class="colorBox deeppink n3">289021</div>
+												<div class="colorBox skyBlue n3">2890210</div>
+
+												<div class="colorBox white n4">705만에서 10만씩 3번 뛰어 센 수</div>
+												<div class="colorBox deeppink n4">735만</div>
+												<div class="colorBox skyBlue n4">745만</div>
+
+												<div class="colorBox white n5">두 수 중에서 더 큰 수</div>
+												<div class="colorBox deeppink n5 blinkOn blinkOpacity clickWrong">386500000</div>
+												<div class="colorBox skyBlue n5 blinkOn blinkOpacity clickObj">3866억</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="moveButtonContainer" data-slide-btn-container="">
+							<div class="basicSlider_btn prev visibleH" data-btn-prev="" data-hover=""></div>
+							<ul class="basicSlider_circle_tabs" data-tabs="">
+								<li data-hover=""></li>
+								<li class="visibleH" data-hover=""></li>
+								<li class="visibleH" data-hover=""></li>
+								<li class="visibleH" data-hover=""></li>
+								<li class="visibleH" data-hover=""></li>
+							</ul>
+							<div class="basicSlider_btn next " data-btn-next="" data-hover=""></div>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</main>
+
+
+
+
+
+</div>
+<div id="loadingContainer">
+<div class="loadingIconAnimation"></div>
+</div>
+<script type="text/javascript" src="../common/libs/js/jquery.js"></script>
+<script type="text/javascript" src="../common/libs/js/ts.js"></script>
+<script type="text/javascript" src="../common/libs/js/animate.js"></script>
+<script type="text/javascript" src="../common/libs/js/dragdrop.js"></script>
+<script type="text/javascript" src="../common/libs/js/slider.js"></script>
+<script type="text/javascript" src="../common/libs/js/popup.js"></script>
+<script type="text/javascript" src="../common/libs/js/scroll.js"></script>
+<script type="text/javascript" src="../common/libs/js/controller.js"></script>
+<script type="text/javascript" src="../common/libs/js/appear.js"></script>
+<script type="text/javascript" src="../common/contents/js/quiz/quiz.js"></script>
+<script type="text/javascript" src="../common/contents/js/pageManager.js"></script>
+<script type="text/javascript" src="../common/contents/js/sprite.js"></script>
+<script type="text/javascript" src="./js/contents.js"></script>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		var arrow = $ts.getEl('.page_2 .clickObj');
+		var pages = $ts.getEl('.page_2 .basicSlider_slides > li');
+
+		arrow.forEach(function (objs, index) {
+			objs.addEventListener('click', function () {
+				for(var i = 0; i < pages.length; i++){
+					pages[i].classList.remove('on');
+				}
+				pages[index+1].classList.add('on');
+			});
+			objs.addEventListener('click', $efSound.click);
+		})
+	}, false);
+</script>
+
+</body>
+
+</html>
