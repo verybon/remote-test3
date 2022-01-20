@@ -41,4 +41,5 @@ document.addEventListener('DOMContentLoaded', function (){
         suh_p_0401_01_0005_201_3, 
         suh_p_0401_01_0005_203_1, 
 	suh_p_0401_01_0006_201_3
-
+    //슬라이드 순서체크
+    suhi_p_0401_01_0007.html
