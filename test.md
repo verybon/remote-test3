@@ -1,6 +1,7 @@
 suh_h_0401_01_0007_301_1.html
 : 부등호 수정
 
+㉠, ㉡, ㉢, ㉣![image](https://user-images.githubusercontent.com/2328191/151111739-dd71f20e-4770-4738-b790-21d16967af75.png)
 
 test
 18035＝10000＋8000＋30＋5
