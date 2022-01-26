@@ -3,10 +3,10 @@
 더 알아보기
   생각 그물
 〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰
-suh_p_0401_01_0009
+  suh_p_0401_01_0009
 
 〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰 👻테블
-<div class="tableContainer brown it-tbl">
+  <div class="tableContainer brown it-tbl">
 
 
 〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰 👻스가
@@ -150,7 +150,7 @@ data-slide-container="popup"
 </ul>
 
 
-〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰  👻SVG
+ 〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰  👻SVG
 <svg width="300" height="80">
 	<polyline points="16,44 16,65 202,65 202,44" fill="transparent" stroke="#ff0000" stroke-width="2"></polyline>
 	<path d="M202 44 L196 54 L208 54 Z" fill="#ff0000" stroke="transparent" stroke-width="0"></path>
