@@ -1,5 +1,7 @@
 suh_h_0401_01_0007_301_1.html
 : 부등호 수정
+∙∙∙∙∙∙
+![image](https://user-images.githubusercontent.com/2328191/151127682-fc61a52e-b4e4-40ed-9592-f86545c0499f.png)
 
 ㉠, ㉡, ㉢, ㉣![image](https://user-images.githubusercontent.com/2328191/151111739-dd71f20e-4770-4738-b790-21d16967af75.png)
 
